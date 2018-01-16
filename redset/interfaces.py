@@ -1,7 +1,8 @@
-
 import abc
+import six
 
 
+@six.add_metaclass(abc.ABCMeta)
 class Serializer(object):
     """
     This is a guideline for implementing a serializer for redset. Serializers
@@ -9,8 +10,6 @@ class Serializer(object):
     here.
 
     """
-    __metaclass__ = abc.ABCMeta
-
     @abc.abstractmethod
     def loads(self, str_from_redis):
         """
